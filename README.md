@@ -24,7 +24,7 @@ Buenos dias y bienvenidos al analisis de vino realizado por Adriel Salguero
 * Precio promedio - por pais y cepa 💰
 
 
-###📊 GRAFICOS 📈
+### 📊 GRAFICOS 📈
 * Graficos de correlacion precio/calidad de todos los vinos
 * Graficos de correlacion precio/calidad de todos los vinos por pais 
 * Graficos de correlacion precio/calidad de todos los vinos por region/cepa
