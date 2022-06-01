@@ -1,7 +1,6 @@
 # WINE ANALYSIS 🍷
 
--Buenos dias y bienvenidos al analisis de vinos! 
--por Adriel Salguero
+Buenos dias y bienvenidos al analisis de vino realizado por Adriel Salguero
 
 
 ## En este repositorio usted encontrara:
