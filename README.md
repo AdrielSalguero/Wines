@@ -9,10 +9,8 @@ por Adriel Salguero
  > - Una base de datos descargada desde [Kaggle](https://www.kaggle.com/zynicide/wine-reviews "Kaggle") que cuenta con vinos puntuados (+80 puntos).
  > - Los algoritmos para la limpieza, analisis y graficado de los datos.
  > - Los resultados de los datos con sus graficos con Python usando [Seaborn](https://seaborn.pydata.org/ "Seaborn").
- > - Un arcihvo PowerBi donde se hara el analisis interactivo de los datos.
- > - Un link a Google Data Studio para observar el mismo analisis desarrollado en este visualizador
-
-
+ > - Un archivo PowerBi donde se podra interacturar con los datos.
+ > - Un link a Google Data Studio.
 
 
 ## En este analisis podra ver: 
