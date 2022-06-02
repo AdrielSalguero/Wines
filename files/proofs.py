@@ -47,5 +47,10 @@ df = pd.read_csv(r'C:\Users\Usuario\Documents\Codes\wine_analysis\data\winemag-d
 
 
 #sns.histplot(data = df, x = "country", hue= "points")
-sns.scatterplot(data = df, x='points', y= 'price', hue = 'country')
-matplotlib.pyplot.show()
+#sns.scatterplot(data = df, x='points', y= 'price', hue = 'country')
+#matplotlib.pyplot.show()
+
+df = df.groupby(by= ['country'], axis = 0).count()
+df.rename({'Unnamed: 0': 'tested'}, axis= 1, inplace= True)
+
+print((df.sort_values(by= ['tested'],axis = 0, ascending= False)).head(10))

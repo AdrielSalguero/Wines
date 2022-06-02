@@ -1,3 +1,5 @@
+from cProfile import label
+import matplotlib
 from matplotlib.pyplot import axes
 import pandas as pd
 import numpy as np 
@@ -60,10 +62,22 @@ def resume(dataframe, category):
     #mask = compacta['tested'] > statistics.mean(compacta['tested'])*0.01
     mask = compacta['tested'] > 50
     filtered = compacta[mask]
+    plots(filtered, cat,1)
     return(filtered)
+    
+
+def plots(dataframe,category,option):
+    
+    if option == 1:
+        sns.scatterplot(data = dataframe, x='AVGPts', y= 'AVGPri', hue = category )
+        matplotlib.pyplot.show()
+    
+    elif option == 2:
+
+        sns.histo
 
 
-
+        
 
 def run ():
     
@@ -91,11 +105,16 @@ def run ():
         df_qualityprice = pricepoints(wines,category)
         print(df_qualityprice)
 
-    plots(wines)
-    #analitycs(wines)
+    top_ten_countries = wines.groupby(by = ['country'],axis = 0).count()
+    top_ten_countries.rename({'Unnamed: 0': 'tested'}, axis= 1, inplace= True)
+    top_ten_countries=(top_ten_countries.sort_values(by= ['tested'],axis = 0, ascending= False)).head(10)
 
+    top_ten_grape = wines.groupby(by = ['variety'],axis = 0).count()
+    top_ten_grape.rename({'Unnamed: 0': 'tested'}, axis= 1, inplace= True)
+    top_ten_grape=(top_ten_grape.sort_values(by= ['tested'],axis = 0, ascending= False)).head(10)
 
-
+    #wines.to_csv('wines.csv')
+    
 
 
 if __name__ == '__main__':
