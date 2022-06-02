@@ -16,19 +16,21 @@ Buenos dias y bienvenidos al analisis de vino realizado por Adriel Salguero
 
 ### 🕵️ Analisis 🔍
 
-* Mejor vino en relacion precio/calidad por pais
-* Mejor vino en relacion precio/calidad por cepa
-* Mejor vino en relacion precio/calidad por region
-* Cantidad de vinos por pais 
-* Cantidad de vinos por cepa/blend
-* Puntajes promedio - por pais y cepa 
-* Precio promedio - por pais y cepa 
+* Mejor vino en relacion precio/calidad por pais.
+* Mejor vino en relacion precio/calidad por cepa.
+* Mejor vino en relacion precio/calidad por region.
+* Cantidad de vinos por pais.
+
+* Cantidad de vinos por cepa/blend.
+* Puntajes promedio - por pais y cepa. 
+* Precio promedio - por pais y cepa.
 
 
 ### 📊 GRAFICOS 📈
 
-* Graficos de correlacion precio/calidad de todos los vinos por pais 
-* Graficos de correlacion precio/calidad de todos los vinos por cepa
-* Histograma de TOP 10 cepa/blend con mas vinos catados
-* Histograma de TOP 10 paises con mas vinos catados
-* Boxplot de precio/puntaje max,min y promedio pro paises seleccionados
+* Graficos de correlacion precio/calidad de todos los vinos por pais.
+* Graficos de correlacion precio/calidad de todos los vinos por cepa.
+* Graficos de correlacion precio/calidad de todos los vinos por region.
+* Histograma de TOP 10 cepa/blend con mas vinos catados.
+* Histograma de TOP 10 paises con mas vinos catados.
+* Boxplot de precio/puntaje max,min y promedio pro paises seleccionados.
