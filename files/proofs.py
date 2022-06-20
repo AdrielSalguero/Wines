@@ -1,3 +1,4 @@
+from re import I
 import statistics
 import matplotlib
 import pandas as pd
@@ -43,14 +44,29 @@ df = pd.DataFrame(l, columns=["a", "b", "c"])
 #print(df.groupby(by=["b"]).sum())
 #print(df.groupby(by=["c"]).sum())
 
-df = pd.read_csv(r'C:\Users\Usuario\Documents\Codes\wine_analysis\data\winemag-data-130k-v2.csv')
+#df = pd.read_csv(r'C:\Users\Usuario\Documents\Codes\wine_analysis\data\winemag-data-130k-v2.csv')
+#df_150 = pd.read_csv(r'C:\Users\Usuario\Documents\Codes\wine_analysis\data\winemag-data_first150k.csv')
+
+
+
 
 
 #sns.histplot(data = df, x = "country", hue= "points")
 #sns.scatterplot(data = df, x='points', y= 'price', hue = 'country')
 #matplotlib.pyplot.show()
 
-df = df.groupby(by= ['country'], axis = 0).count()
-df.rename({'Unnamed: 0': 'tested'}, axis= 1, inplace= True)
 
-print((df.sort_values(by= ['tested'],axis = 0, ascending= False)).head(10))
+
+#print(df.dtypes)
+
+lista =[]
+#for i in df['price']:
+
+#   if type(i) != float:
+#       lista.append(i)
+
+#print(lista)
+titles = ['a','a','c','d','e']
+positions = []
+[positions.append((i+1)*2) for i in range(len(titles))]
+print(positions)
