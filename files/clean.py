@@ -1,7 +1,11 @@
 from cProfile import label
+from doctest import DocFileSuite
+from lib2to3.pgen2.pgen import DFAState
+from tkinter import VERTICAL
 from unicodedata import category
 import matplotlib
 import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 import numpy as np 
 
@@ -63,7 +67,7 @@ def resume(dataframe, category):
     #mask = compacta['tested'] > statistics.mean(compacta['tested'])*0.01
     mask = compacta['tested'] > 50
     filtered = compacta[mask]
-    plots(filtered, 'scatter',None)
+    plots(filtered, 'scatter',str(category))
     
     return(filtered)
     
@@ -75,6 +79,9 @@ def plots(dataframe,option,titles):
         plt.scatter(dataframe['AVGPri'],dataframe['AVGPts'])
         #for i, txt in enumerate(dataframe.index):
         #    plt.annotate(str(txt), (dataframe['AVGPri'][i],dataframe['AVGPts'][i]))
+        plt.xlabel('Price')
+        plt.ylabel('Points')
+        plt.title(f'Price points relation for {titles}')
         plt.show()
     
     elif option == 'bar':
@@ -85,18 +92,17 @@ def plots(dataframe,option,titles):
         ax.set_ylabel(f'{titles}')
         ax.set_xlabel('Wines tested')
         plt.show()
+        
 
     elif option == 'box':
 
-        position = []
-        [position.append((i+1)*2) for i in range(len(titles))]
         
-        fig, ax= plt.subplots()
-        ax.boxplot(dataframe,positions= position, showmeans= True,
-                    medianprops={"color": 'white', "linewidth": 0.5},
-                    boxprops={"facecolor": "#8B3333", "edgecolor": "white",  "linewidth": 0.5})
+        sns.boxplot(y=dataframe.price, x = dataframe.country, data= dataframe, orient= 'v')
         plt.show()
-        
+
+    return('Done')
+
+
 
 def run ():
     
@@ -146,31 +152,31 @@ def run ():
             hmw = int(input('Remember select between 2 and 5 \n \n How many countries do you want to compare? '))
             
             mw= []
-            if hmw>5 or hmw<2:
+
                 
-                hmw = int(input('ERROR --- Remember select between 2 and 5 \n \n How many countries do you want to compare? '))
-                
-            else: 
-                
-                countries_list = wines['country'].unique()
-                for i in countries_list:
+            countries_list = wines['country'].unique()
+            for i in countries_list:
                    
                     print(i)
                 
-                for i in range(hmw):
+            for i in range(hmw):
 
                     paises= input('Select from the countries above and write only one.... ')
                     mw.append(paises.capitalize())
 
-                df_boxplot= wines[wines['country'].isin(mw)]
+            df_boxplot= wines[wines['country'].isin(mw)]
+            df_boxplot = df_boxplot.loc[:,['country', 'price']]
+
+                #print(df_boxplot.columns)
+                #print(mw)
+            plots(df_boxplot,'box',mw)
                 
-                #print(df_boxplot)
-                plots(df_boxplot,'box', mw)
 
         except ValueError:
             
             hmw = int(input('Value error --- Enter a number. EX: 2 if you want compare two countries \n \n How many countries do you want to compare? '))
 
+    wines.to_csv("wines.csv")
 
 if __name__ == '__main__':
 

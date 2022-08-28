@@ -7,7 +7,7 @@ Buenos dias y bienvenidos al analisis de vino realizado por Adriel Salguero
 
  > - Una base de datos descargada desde [Kaggle](https://www.kaggle.com/zynicide/wine-reviews "Kaggle") que cuenta con vinos puntuados (+80 puntos).
  > - Los algoritmos para la limpieza, analisis y graficado de los datos.
- > - Los resultados de los datos con sus graficos con Python usando [Seaborn](https://seaborn.pydata.org/ "Seaborn").
+ > - Los resultados de los datos con sus graficos con Python usando [Matplot](https://matplotlib.org/ "Matplot Lib").
  > - Un archivo PowerBi donde se podra interacturar con los datos.
  > - Un link a Google Data Studio.
 
@@ -31,6 +31,6 @@ Buenos dias y bienvenidos al analisis de vino realizado por Adriel Salguero
 * Graficos de correlacion precio/calidad de todos los vinos por pais.
 * Graficos de correlacion precio/calidad de todos los vinos por cepa.
 * Graficos de correlacion precio/calidad de todos los vinos por region.
-* Histograma de TOP 10 cepa/blend con mas vinos catados.
-* Histograma de TOP 10 paises con mas vinos catados.
-* Boxplot de precio/puntaje max,min y promedio pro paises seleccionados.
+* Barplot de TOP 10 cepa/blend con mas vinos catados.
+* Barplot de TOP 10 paises con mas vinos catados.
+* Boxplot de precio/puntaje max,min y promedio por paises seleccionados(max=5).
